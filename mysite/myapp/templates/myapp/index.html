@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>index page</h1>
+    <h2>
+      {% for item in items %}
+      <a href="{% url 'myapp:detail' item.id %}">
+        ID: {{item.name}} Модель:{{item.name}} Цена: {{item.price}} Описание:
+        {{item.description}} <br />
+      </a>
+      {% endfor %}
+    </h2>
+  </body>
+</html>
